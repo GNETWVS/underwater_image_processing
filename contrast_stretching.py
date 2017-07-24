@@ -71,6 +71,7 @@ resultBGR = cv2.cvtColor(result_img, cv2.COLOR_YCrCb2BGR)
 #print('======result_img array data type=======')
 #print(np.ndarray.dtype(result_img))
 
-cv2.imshow(resultBGR)
+cv2.imshow('result',resultBGR/255)
+cv2.imwrite('RESULT.png',resultBGR)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

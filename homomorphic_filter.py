@@ -108,8 +108,10 @@ result_full[:,:,2] = cb
 resultRGB = cv2.cvtColor(result_full, cv2.COLOR_YCrCb2RGB)
 resultBGR = cv2.cvtColor(result_full, cv2.COLOR_YCrCb2BGR)
 
-resultRGB = resultRGB*255
-resultBGR = resultBGR*255
+#resultRGB = resultRGB*255
+#resultBGR = resultBGR*255
+
+# because cv2.imshow() denormalizes itself the images it's asked to show us
 
 cv2.imshow('resultat',result)
 cv2.imwrite('resultat_'+choix_image+'.png',result*255)
