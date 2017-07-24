@@ -112,6 +112,7 @@ resultBGR = cv2.cvtColor(result_full, cv2.COLOR_YCrCb2BGR)
 #resultBGR = resultBGR*255
 
 # because cv2.imshow() denormalizes itself the images it's asked to show us
+# but we then need to *255 the resultBGR before cv2.imwrite()
 
 cv2.imshow('resultat',result)
 cv2.imwrite('resultat_'+choix_image+'.png',result*255)
@@ -119,7 +120,7 @@ cv2.waitKey(0)
 cv2.imshow('resultat RGB',resultRGB)
 cv2.waitKey(0)
 cv2.imshow('resultat BGR',resultBGR)
-cv2.imwrite(choix_image + '_filtre_homo.png',resultBGR)
+cv2.imwrite(choix_image + '_filtre_homo.png',resultBGR*255)
 # il apparait que result BGR est 'le bon' resultat en termes de format d'image RGB
 cv2.waitKey(0)
 cv2.destroyAllWindows()
