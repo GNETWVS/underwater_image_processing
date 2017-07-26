@@ -3,6 +3,10 @@
 
 # pixelwise implementation of http://www.ipol.im/pub/art/2011/bcm_nlm/
 
+# one letter variable names are associated with the very same variable in the linked research paper
+
+# p and q defining pixels, they will be 1D 2-elements numpy array, describing their pixel coordinates
+
 import numpy
 import math
 import PIL import Image
@@ -29,6 +33,12 @@ print(img.shape)
 ### weights ###
 ###############
 
-w = numpy.zeros((rows,cols))
+def compute_weights(rows, cols, dim, img):
+    w = numpy.zeros((rows,cols))
 
-w[p,q] = 
+    w[p,q] = 
+
+def compute_euclidean_distance(p,q,f,img):
+    for RGB_component in range(3):
+        for lig in range(1,f+1):
+            for col
