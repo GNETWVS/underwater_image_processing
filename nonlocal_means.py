@@ -49,9 +49,9 @@ def compute_total_weight(p, rows, cols, dim, img, sigma, h, r, f):
 
     for i in range(1,r+1):
         for j in range(1,r+1):
-            q = [ p[0]+i , p[1]+j ]
+            q = numpy.array( [p[0]+i , p[1]+j] )
             total_weight += compute_weights(p, q, f, rows, cols, dim, img, sigma, h)
-            q = [ p[0]-i , p[1]-j ]
+            q = numpy.array( [p[0]-i , p[1]-j] )
             total_weight += compute_weights(p, q, f, rows, cols, dim, img, sigma, h)
     return( total_weight )
 
@@ -90,8 +90,15 @@ def compute_squared_euclidean_distance(p,q,f,img):
 
 def sum_of_weighed_pixels(p, rows, cols, img, r):
     
+    incremented_sum = 0
+
+    for RGB_component in range(3):
+
     for i in range(1,r+1):
-        for j in range
+        for j in range(1,r+1):
+            
+            q = numpy.array( [p[0]+i , p[1]+j] )
+            incremented_sum += img
 
 ##########################################################################################
 ########################### MAIN LOOP ####################################################
@@ -106,4 +113,4 @@ for row in range(rows):
         
         weighed_pixels_sum = sum_of_weighed_pixels(p, rows, cols, img, r)
 
-
+        
